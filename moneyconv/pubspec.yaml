@@ -28,6 +28,7 @@ environment:
 # the latest version available on pub.dev. To see which dependencies have newer
 # versions available, run `flutter pub outdated`.
 dependencies:
+
   flutter:
     sdk: flutter
 
@@ -36,9 +37,18 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
 
+
+
 dev_dependencies:
+
   flutter_test:
+
     sdk: flutter
+  flutter_launcher_icons: "^0.10.0"
+flutter_icons:
+  generate: true
+  image_path: "lib/assets/money.png"
+  icon_size: 300 # min:300, max:300, default: 300
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
