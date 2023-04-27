@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'MoneyConv',
       theme: ThemeData(
-        primarySwatch: Colors.green,
+        primarySwatch: Colors.red,
       ),
       home: const MyHomePage(title: 'MoneyConv'),
     );
@@ -51,19 +51,15 @@ class _MyHomePageState extends State<MyHomePage> {
           final double result = value * _multiplier;
           final String message =
               'O valor convertido fica: ${result.toStringAsFixed(2)}';
-          return Column(
-            children: [
-              AlertDialog(
-                title: Center(child: const Text('Resultado')),
-                content: Text(message),
-                actions: <Widget>[
-                  TextButton(
-                    onPressed: () {
-                      Navigator.of(context).pop();
-                    },
-                    child: const Text('OK'),
-                  ),
-                ],
+          return AlertDialog(
+            title: const Text('Resultado'),
+            content: Text(message),
+            actions: <Widget>[
+              TextButton(
+                onPressed: () {
+                  Navigator.of(context).pop();
+                },
+                child: const Text('OK'),
               ),
             ],
           );
@@ -88,11 +84,14 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
+    
     return Scaffold(
+      
       appBar: AppBar(
         title: Text(widget.title),
       ),
       body: Center(
+        
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
@@ -106,6 +105,7 @@ class _MyHomePageState extends State<MyHomePage> {
               child: const Text('Euro',
               ),
             ),
+            
             Text(_selectedOption),
             TextField(
               style: TextStyle(letterSpacing: 1.5,
@@ -120,11 +120,14 @@ class _MyHomePageState extends State<MyHomePage> {
           ],
         ),
       ),
-      floatingActionButton: FloatingActionButton(
+      
+      floatingActionButton: FloatingActionButton.extended(
         onPressed: _incrementCounter,
-        tooltip: 'Calc',
-        child: const Icon(Icons.calculate),
+        tooltip: 'Calculo',
+        label: Text('CALCULAR'),
       ),
+      
     );
+    
   }
 }
