@@ -1,5 +1,5 @@
-name: teste Actions
-run-name: ${{ github.actor }} building app teste 🚀
+name: MoneyConv Actions
+run-name: ${{ github.actor }} building app MoneyConv 🚀
 on: 
   push:
 
@@ -24,12 +24,12 @@ jobs:
         uses: thedoctor0/zip-release@master
         with:
           type: 'zip'
-          filename: teste-windows.zip
+          filename: moneyconv-windows.zip
           directory: build/windows/runner/Release
       - name: Windows Release
         uses: ncipollo/release-action@v1
         with:
-          artifacts: build/windows/runner/Release/teste-windows.zip
+          artifacts: build/windows/runner/Release/moneyconv-windows.zip
           token: ${{ secrets.GITHUB_TOKEN }}
           tag: v1.0.${{ github.run_number }}w
 
@@ -55,11 +55,11 @@ jobs:
         uses: thedoctor0/zip-release@master
         with:
           type: 'zip'
-          filename: teste-linux.zip
+          filename: moneyconv-linux.zip
           directory: build/linux/x64/release/bundle
       - name: Linux Release
         uses: ncipollo/release-action@v1
         with:
-          artifacts: "build/linux/x64/release/bundle/teste-linux.zip"
+          artifacts: "build/linux/x64/release/bundle/moneyconv-linux.zip"
           token: ${{ secrets.GITHUB_TOKEN }}
           tag: v1.0.${{ github.run_number }}l
